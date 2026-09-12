@@ -72,6 +72,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll-triggered Section Reveals
     if (typeof ScrollTrigger !== 'undefined') {
+      // Singular Terminal Boot Diagnostic Log — Character-by-character typing on scroll
+      const terminalSection = document.querySelector('.terminal-log-section');
+      const logLines = document.querySelectorAll('.terminal-log-line');
+
+      if (terminalSection && logLines.length > 0) {
+        const rawTexts = Array.from(logLines).map((line) => line.textContent.trim());
+
+        // Prepare lines for typing animation
+        logLines.forEach((line) => {
+          line.textContent = '';
+          line.style.visibility = 'hidden';
+        });
+
+        ScrollTrigger.create({
+          trigger: terminalSection,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            let currentLine = 0;
+
+            function typeLine() {
+              if (currentLine >= logLines.length) {
+                // Ensure active cursor is attached to the final line
+                const lastLine = logLines[logLines.length - 1];
+                if (lastLine && !lastLine.querySelector('.terminal-cursor')) {
+                  const cursor = document.createElement('span');
+                  cursor.className = 'terminal-cursor';
+                  cursor.setAttribute('aria-hidden', 'true');
+                  cursor.textContent = '_';
+                  lastLine.appendChild(cursor);
+                }
+                return;
+              }
+
+              const lineEl = logLines[currentLine];
+              const fullText = rawTexts[currentLine].replace(/_$/, '');
+              lineEl.style.visibility = 'visible';
+              let charIdx = 0;
+
+              const typingInterval = setInterval(() => {
+                charIdx++;
+                lineEl.textContent = fullText.slice(0, charIdx);
+
+                if (charIdx >= fullText.length) {
+                  clearInterval(typingInterval);
+                  currentLine++;
+                  setTimeout(typeLine, 75);
+                }
+              }, 12);
+            }
+
+            typeLine();
+          }
+        });
+      }
+
       // Section header blocks
       document.querySelectorAll('.section-header-block').forEach((header) => {
         gsap.from(header, {

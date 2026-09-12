@@ -106,6 +106,25 @@
       </div>
     </section>
 
+    <!-- Terminal Boot Diagnostic Log (Singular Pattern-Break Element) -->
+    <section class="terminal-log-section" aria-label="System runtime diagnostic log">
+      <div class="terminal-log-container">
+        <div class="terminal-log-header">
+          <div class="terminal-log-title">
+            <span class="terminal-log-dot" aria-hidden="true"></span>
+            <span>TERMINAL_DIAGNOSTIC // LOCAL_RUNTIME_INIT</span>
+          </div>
+          <span class="terminal-log-status">BUFFER: READY</span>
+        </div>
+        <div class="terminal-log-body" role="status" aria-live="polite">
+          <div class="terminal-log-line">&gt; lensque:init — 6 image manipulation modules loaded into browser runtime</div>
+          <div class="terminal-log-line">&gt; lensque:runtime — hardware-accelerated canvas 2D &amp; wasm pipelines verified</div>
+          <div class="terminal-log-line">&gt; lensque:network — remote outbound payload requests: disabled (0 bytes/s)</div>
+          <div class="terminal-log-line terminal-log-active">&gt; lensque:standby — local execution engine ready for file ingestion<span class="terminal-cursor" aria-hidden="true">_</span></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Tools Section -->
     <section class="tools-section" id="tools" aria-labelledby="tools-title">
       <div class="section-container">
