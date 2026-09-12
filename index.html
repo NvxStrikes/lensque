@@ -51,23 +51,41 @@
     <!-- Hero Section -->
     <section class="hero-section" aria-labelledby="hero-title">
       <div class="hero-container">
-        <div class="hero-meta-label">
-          <span class="mono-tag">ARCHITECTURE SPECIFICATION // ZERO SERVER UPLOADS</span>
+        <!-- Asymmetric Left Column: Headline, Subtext, Buttons -->
+        <div class="hero-main-col">
+          <div class="hero-meta-label">
+            <span class="mono-tag">ARCHITECTURE SPECIFICATION // ZERO SERVER UPLOADS</span>
+          </div>
+
+          <h1 id="hero-title" class="hero-headline">
+            CLIENT-SIDE IMAGE TOOLKIT.<br>
+            ALL PROCESSING OCCURS IN BROWSER MEMORY.
+          </h1>
+
+          <p class="hero-description">
+            Lensque runs image manipulation routines locally using standard browser APIs. 
+            Files are read into memory via FileReader, processed through Canvas pipelines, 
+            and exported to disk. No images, metadata, or telemetry are transmitted over the network.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#tools" class="primary-btn">
+              EXPLORE 6 TOOLS
+              <span class="btn-arrow" aria-hidden="true">&darr;</span>
+            </a>
+            <a href="#privacy" class="secondary-btn">
+              VIEW PRIVACY SPEC
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
 
-        <h1 id="hero-title" class="hero-headline">
-          CLIENT-SIDE IMAGE TOOLKIT.<br>
-          ALL PROCESSING OCCURS IN BROWSER MEMORY.
-        </h1>
-
-        <p class="hero-description">
-          Lensque runs image manipulation routines locally using standard browser APIs. 
-          Files are read into memory via FileReader, processed through Canvas pipelines, 
-          and exported to disk. No images, metadata, or telemetry are transmitted over the network.
-        </p>
-
-        <!-- Factual Telemetry Spec Strip (No stacked pill badges) -->
-        <div class="stat-strip" aria-label="Technical operational specifications">
+        <!-- Asymmetric Right Column: Vertical Telemetry Readout Stack -->
+        <aside class="hero-telemetry-col" aria-label="Technical operational specifications">
+          <div class="telemetry-stack-header">
+            <span class="stack-header-indicator" aria-hidden="true"></span>
+            <span class="stack-header-label">SYSTEM_TELEMETRY</span>
+          </div>
           <div class="stat-cell">
             <span class="stat-key">PIPELINE EXECUTION</span>
             <span class="stat-value">Client-Side Memory</span>
@@ -84,18 +102,7 @@
             <span class="stat-key">ACCESS MODEL</span>
             <span class="stat-value">Open Standard</span>
           </div>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#tools" class="primary-btn">
-            EXPLORE 6 TOOLS
-            <span class="btn-arrow" aria-hidden="true">&darr;</span>
-          </a>
-          <a href="#privacy" class="secondary-btn">
-            VIEW PRIVACY SPEC
-            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
+        </aside>
       </div>
     </section>
 

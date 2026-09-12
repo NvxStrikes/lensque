@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       onComplete: () => {
         // Clear all inline transforms and will-change to avoid GPU memory overhead
         gsap.set(
-          ['.hero-meta-label', '.hero-headline', '.hero-description', '.stat-strip', '.hero-actions'],
+          ['.hero-meta-label', '.hero-headline', '.hero-description', '.hero-actions', '.hero-telemetry-col'],
           { clearProps: 'all' }
         );
       }
@@ -52,14 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
         '-=0.3' // Starts 0.1s after headline begins
       )
       .from(
-        ['.stat-strip', '.hero-actions'],
+        '.hero-actions',
         {
           opacity: 0,
           y: 10,
-          duration: 0.3,
-          stagger: 0.05
+          duration: 0.3
         },
         '-=0.2' // Starts 0.1s after subtext begins
+      )
+      .from(
+        '.hero-telemetry-col',
+        {
+          opacity: 0,
+          y: 14,
+          duration: 0.35
+        },
+        '-=0.25' // Enters smoothly with actions
       );
 
     // Scroll-triggered Section Reveals

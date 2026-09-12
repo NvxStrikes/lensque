@@ -256,6 +256,16 @@ button {
 .hero-container {
   max-width: var(--container-max-width);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 56px;
+  align-items: stretch;
+}
+
+.hero-main-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-meta-label {
@@ -277,42 +287,73 @@ button {
 .hero-headline {
   font-family: var(--font-headline);
   font-weight: 700;
-  font-size: clamp(2.4rem, 6vw, 4.75rem);
-  line-height: 1.02;
+  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+  line-height: 1.04;
   letter-spacing: -0.04em;
   color: var(--text-primary);
-  margin-bottom: 28px;
-  max-width: 1050px;
+  margin-bottom: 24px;
 }
 
 .hero-description {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
   line-height: 1.65;
   color: var(--text-secondary);
-  max-width: 780px;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
+  max-width: 680px;
 }
 
-/* Stat Strip: Factual telemetry cells */
-.stat-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: var(--border-width) solid var(--border-default);
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Vertical Telemetry Readout Stack on Right */
+.hero-telemetry-col {
   background-color: var(--bg-surface);
-  margin-bottom: 48px;
-}
-
-.stat-cell {
-  padding: 20px 24px;
-  border-right: var(--border-hairline) solid var(--border-default);
+  border: var(--border-width) solid var(--border-default);
+  box-shadow: 4px 4px 0px 0px var(--border-default);
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+}
+
+.telemetry-stack-header {
+  background-color: #070707;
+  border-bottom: var(--border-hairline) solid var(--border-default);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-yellow);
+}
+
+.stack-header-indicator {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-yellow);
+  display: inline-block;
+}
+
+.hero-telemetry-col .stat-cell {
+  padding: 20px 20px;
+  border-bottom: var(--border-hairline) solid var(--border-default);
+  border-right: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 6px;
 }
 
-.stat-cell:last-child {
-  border-right: none;
+.hero-telemetry-col .stat-cell:last-child {
+  border-bottom: none;
 }
 
 .stat-key {
@@ -329,13 +370,6 @@ button {
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
 }
 
 /* Neo-brutalist primary button with hard offset shadow */
@@ -800,21 +834,13 @@ button {
    12. Responsive Breakpoints
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat-cell:nth-child(2) {
-    border-right: none;
-  }
-
-  .stat-cell:nth-child(1),
-  .stat-cell:nth-child(2) {
-    border-bottom: var(--border-hairline) solid var(--border-default);
   }
 
   .privacy-strip-grid {
