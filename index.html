@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lensque — In-Browser Image Toolkit</title>
+  <meta name="description" content="Free, client-side image toolkit. Background removal, compression, upscaling, format conversion, watermarking, and favicon generation running entirely in the browser without server uploads.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+  <!-- System Utility Top Bar -->
+  <aside class="telemetry-bar" aria-label="System status">
+    <div class="telemetry-container">
+      <span class="telemetry-item"><span class="telemetry-indicator" aria-hidden="true"></span>SYSTEM: OPERATIONAL</span>
+      <span class="telemetry-item">PROCESSING: CLIENT_SIDE_ONLY</span>
+      <span class="telemetry-item">INGESTION: LOCAL_BROWSER_MEMORY</span>
+      <span class="telemetry-item telemetry-version">BUILD: 2026.09.1</span>
+    </div>
+  </aside>
+
+  <!-- Main Site Header -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#" class="brand-wordmark" aria-label="Lensque home">
+        <span class="brand-text">LENSQUE</span>
+        <span class="brand-tag">TOOLKIT</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#tools" class="nav-link"><span class="nav-mono">01.</span> TOOLS</a></li>
+          <li class="nav-item"><a href="#privacy" class="nav-link"><span class="nav-mono">02.</span> PRIVACY</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><span class="nav-mono">03.</span> ABOUT</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-action">
+        <a href="#tools" class="action-btn">OPEN TOOLS</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-container">
+        <div class="hero-meta-label">
+          <span class="mono-tag">ARCHITECTURE SPECIFICATION // ZERO SERVER UPLOADS</span>
+        </div>
+
+        <h1 id="hero-title" class="hero-headline">
+          CLIENT-SIDE IMAGE TOOLKIT.<br>
+          ALL PROCESSING OCCURS IN BROWSER MEMORY.
+        </h1>
+
+        <p class="hero-description">
+          Lensque runs image manipulation routines locally using standard browser APIs. 
+          Files are read into memory via FileReader, processed through Canvas pipelines, 
+          and exported to disk. No images, metadata, or telemetry are transmitted over the network.
+        </p>
+
+        <!-- Factual Telemetry Spec Strip (No stacked pill badges) -->
+        <div class="stat-strip" aria-label="Technical operational specifications">
+          <div class="stat-cell">
+            <span class="stat-key">PIPELINE EXECUTION</span>
+            <span class="stat-value">Client-Side Memory</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-key">REMOTE DATA TRANSFERS</span>
+            <span class="stat-value">0 Bytes</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-key">ACCOUNT REQUIREMENT</span>
+            <span class="stat-value">None</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-key">ACCESS MODEL</span>
+            <span class="stat-value">Open Standard</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#tools" class="primary-btn">
+            EXPLORE 6 TOOLS
+            <span class="btn-arrow" aria-hidden="true">&darr;</span>
+          </a>
+          <a href="#privacy" class="secondary-btn">
+            VIEW PRIVACY SPEC
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools" aria-labelledby="tools-title">
+      <div class="section-container">
+        <div class="section-header-block">
+          <div class="section-meta-wrapper">
+            <span class="section-mono-index">SEC_01</span>
+            <span class="section-meta-divider" aria-hidden="true">/</span>
+            <span class="section-meta-label">FUNCTIONAL REGISTRY</span>
+          </div>
+          <h2 id="tools-title" class="section-title">TOOL DIRECTORY</h2>
+          <p class="section-subtitle">
+            Six focused utilities executed directly in browser memory. Select any tool to initialize its client-side workspace.
+          </p>
+        </div>
+
+        <!-- 6 Tools Grid with Neo-Brutalist Hard Offset Shadows -->
+        <div class="tools-grid">
+          <!-- Tool 01 -->
+          <article class="tool-card" id="tool-01">
+            <div class="tool-card-inner">
+              <div class="tool-card-top">
+                <span class="tool-index">01</span>
+                <span class="tool-category">SEGMENTATION</span>
+              </div>
+              <h3 class="tool-name">Background remover</h3>
+              <p class="tool-description">
+                Removes the background from an image, outputs transparent PNG.
+              </p>
+              <div class="tool-specs">
+                <span class="spec-item">OUTPUT: PNG</span>
+                <span class="spec-item">ALPHA CHANNEL: PRESERVED</span>
+              </div>
+              <div class="tool-footer">
+                <a href="#tool-01" class="tool-action-btn">
+                  <span>OPEN TOOL</span>
+                  <span class="action-icon" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tool 02 -->
+          <article class="tool-card" id="tool-02">
+            <div class="tool-card-inner">
+              <div class="tool-card-top">
+                <span class="tool-index">02</span>
+                <span class="tool-category">OPTIMIZATION</span>
+              </div>
+              <h3 class="tool-name">Image compressor</h3>
+              <p class="tool-description">
+                Reduces file size with adjustable quality, shows before/after size.
+              </p>
+              <div class="tool-specs">
+                <span class="spec-item">TARGETS: JPG / WEBP / PNG</span>
+                <span class="spec-item">METRICS: REALTIME DELTA</span>
+              </div>
+              <div class="tool-footer">
+                <a href="#tool-02" class="tool-action-btn">
+                  <span>OPEN TOOL</span>
+                  <span class="action-icon" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tool 03 -->
+          <article class="tool-card" id="tool-03">
+            <div class="tool-card-inner">
+              <div class="tool-card-top">
+                <span class="tool-index">03</span>
+                <span class="tool-category">RESOLUTION</span>
+              </div>
+              <h3 class="tool-name">Upscaler</h3>
+              <p class="tool-description">
+                Increases image resolution by 2x or 4x, on-device.
+              </p>
+              <div class="tool-specs">
+                <span class="spec-item">SCALING FACTORS: 2X / 4X</span>
+                <span class="spec-item">INTERPOLATION: ON-DEVICE</span>
+              </div>
+              <div class="tool-footer">
+                <a href="#tool-03" class="tool-action-btn">
+                  <span>OPEN TOOL</span>
+                  <span class="action-icon" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tool 04 -->
+          <article class="tool-card" id="tool-04">
+            <div class="tool-card-inner">
+              <div class="tool-card-top">
+                <span class="tool-index">04</span>
+                <span class="tool-category">ENCODING</span>
+              </div>
+              <h3 class="tool-name">Format converter</h3>
+              <p class="tool-description">
+                Converts between JPG, PNG, WebP, and other common formats.
+              </p>
+              <div class="tool-specs">
+                <span class="spec-item">CODECS: WEBP / PNG / JPG</span>
+                <span class="spec-item">ENCODING: NATIVE CANVAS</span>
+              </div>
+              <div class="tool-footer">
+                <a href="#tool-04" class="tool-action-btn">
+                  <span>OPEN TOOL</span>
+                  <span class="action-icon" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tool 05 -->
+          <article class="tool-card" id="tool-05">
+            <div class="tool-card-inner">
+              <div class="tool-card-top">
+                <span class="tool-index">05</span>
+                <span class="tool-category">COMPOSITION</span>
+              </div>
+              <h3 class="tool-name">Watermark adder</h3>
+              <p class="tool-description">
+                Adds a text or image watermark at a chosen position and opacity.
+              </p>
+              <div class="tool-specs">
+                <span class="spec-item">MODES: TEXT &amp; IMAGE OVERLAY</span>
+                <span class="spec-item">CONTROL: 9-POINT ANCHOR</span>
+              </div>
+              <div class="tool-footer">
+                <a href="#tool-05" class="tool-action-btn">
+                  <span>OPEN TOOL</span>
+                  <span class="action-icon" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tool 06 -->
+          <article class="tool-card" id="tool-06">
+            <div class="tool-card-inner">
+              <div class="tool-card-top">
+                <span class="tool-index">06</span>
+                <span class="tool-category">GENERATION</span>
+              </div>
+              <h3 class="tool-name">Favicon generator</h3>
+              <p class="tool-description">
+                Generates a full favicon set from a single image.
+              </p>
+              <div class="tool-specs">
+                <span class="spec-item">SIZES: 16 / 32 / 48 / 180 / 192</span>
+                <span class="spec-item">OUTPUT: ZIP ARCHIVE &amp; ICO</span>
+              </div>
+              <div class="tool-footer">
+                <a href="#tool-06" class="tool-action-btn">
+                  <span>OPEN TOOL</span>
+                  <span class="action-icon" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy-section" id="privacy" aria-labelledby="privacy-title">
+      <div class="section-container">
+        <div class="section-header-block">
+          <div class="section-meta-wrapper">
+            <span class="section-mono-index">SEC_02</span>
+            <span class="section-meta-divider" aria-hidden="true">/</span>
+            <span class="section-meta-label">DATA HANDLING PROTOCOL</span>
+          </div>
+          <h2 id="privacy-title" class="section-title">PRIVACY ARCHITECTURE</h2>
+          <p class="section-subtitle">
+            Three factual statements defining how Lensque handles files, persistent data, and network traffic.
+          </p>
+        </div>
+
+        <div class="privacy-strip-grid">
+          <!-- Statement 1: Upload behavior -->
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-index">01</span>
+              <span class="privacy-tag">NETWORK BOUNDARY</span>
+            </div>
+            <h3 class="privacy-statement-title">Upload behavior</h3>
+            <p class="privacy-statement-body">
+              Images never leave the local environment. Files are loaded into browser memory via FileReader and Canvas APIs. No data packets or file streams are transmitted to any remote server or third-party endpoint.
+            </p>
+            <div class="privacy-metric">
+              <span class="metric-label">NETWORK PAYLOAD DISPATCHED:</span>
+              <span class="metric-value">0 BYTES</span>
+            </div>
+          </article>
+
+          <!-- Statement 2: Storage behavior -->
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-index">02</span>
+              <span class="privacy-tag">STATE RETENTION</span>
+            </div>
+            <h3 class="privacy-statement-title">Storage behavior</h3>
+            <p class="privacy-statement-body">
+              No local persistence or caching across sessions. There is no server database, no tracking cookies, and no image data written to IndexedDB or localStorage. All processed data in memory is purged immediately upon closing or refreshing the tab.
+            </p>
+            <div class="privacy-metric">
+              <span class="metric-label">PERSISTENT RECORD RETENTION:</span>
+              <span class="metric-value">0 RECORDS</span>
+            </div>
+          </article>
+
+          <!-- Statement 3: Tracking behavior -->
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-index">03</span>
+              <span class="privacy-tag">OBSERVABILITY</span>
+            </div>
+            <h3 class="privacy-statement-title">Tracking behavior</h3>
+            <p class="privacy-statement-body">
+              No telemetry scripts, no third-party tracking pixels, and no fingerprinting libraries exist within the application. Outgoing network requests during image manipulation remain strictly zero.
+            </p>
+            <div class="privacy-metric">
+              <span class="metric-label">TELEMETRY BEACONS:</span>
+              <span class="metric-value">0 ACTIVE</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="section-container">
+        <div class="section-header-block">
+          <div class="section-meta-wrapper">
+            <span class="section-mono-index">SEC_03</span>
+            <span class="section-meta-divider" aria-hidden="true">/</span>
+            <span class="section-meta-label">TECHNICAL SPECIFICATION</span>
+          </div>
+          <h2 id="about-title" class="section-title">ENGINE ARCHITECTURE</h2>
+          <p class="section-subtitle">
+            Why client-side processing serves as the optimal operational model for image tooling.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-panel">
+            <h3 class="about-panel-title">Hardware-accelerated browser execution</h3>
+            <p class="about-panel-text">
+              Modern web standards support direct pixel manipulation in hardware-accelerated 2D contexts and WebGL shaders. Running operations locally removes round-trip network latency, eliminates arbitrary upload file-size caps, and bypasses queue bottlenecks common to cloud-rendered SaaS pipelines.
+            </p>
+          </div>
+          <div class="about-panel">
+            <h3 class="about-panel-title">Zero transit liability</h3>
+            <p class="about-panel-text">
+              Traditional web tools require transferring complete image files to third-party infrastructure for processing. Lensque inverts this paradigm by executing algorithms locally inside the user's browser runtime. Because the files never traverse the network, interception or unauthorized persistence is mathematically precluded.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-primary-row">
+        <div class="footer-brand-block">
+          <span class="footer-brand-title">LENSQUE</span>
+          <p class="footer-brand-tagline">Lensque — built by NovaStrikes</p>
+        </div>
+
+        <div class="footer-links-block">
+          <nav class="footer-nav" aria-label="Footer Navigation">
+            <ul class="footer-links-list">
+              <li><a href="https://github.com/NvxStrikes/lensque" class="footer-link" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+              <li><a href="#" class="footer-link">CONTACT</a></li>
+              <li><a href="#header" class="footer-link top-link">RETURN TO TOP &uarr;</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-spec-row">
+        <span class="footer-spec-item">RUNTIME: BROWSER_STANDARDS_ONLY</span>
+        <span class="footer-spec-item">FRAMEWORKS: NONE</span>
+        <span class="footer-spec-item">BUILD_STEP: UNCOMPILIED_STATIC</span>
+        <span class="footer-spec-item">&copy; 2026 LENSQUE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
