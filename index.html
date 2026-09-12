@@ -135,9 +135,6 @@
             <span class="section-meta-label">FUNCTIONAL REGISTRY</span>
           </div>
           <h2 id="tools-title" class="section-title">TOOL DIRECTORY</h2>
-          <p class="section-subtitle">
-            Six focused utilities executed directly in browser memory. Select any tool to initialize its client-side workspace.
-          </p>
         </div>
 
         <!-- Terminal-Style Tools Directory Table -->
@@ -266,9 +263,6 @@
             <span class="section-meta-label">DATA HANDLING PROTOCOL</span>
           </div>
           <h2 id="privacy-title" class="section-title">PRIVACY ARCHITECTURE</h2>
-          <p class="section-subtitle">
-            Three factual statements defining how Lensque handles files, persistent data, and network traffic.
-          </p>
         </div>
 
         <div class="privacy-strip-grid">
@@ -280,7 +274,7 @@
             </div>
             <h3 class="privacy-statement-title">Upload behavior</h3>
             <p class="privacy-statement-body">
-              Images never leave the local environment. Files are loaded into browser memory via FileReader and Canvas APIs. No data packets or file streams are transmitted to any remote server or third-party endpoint.
+              Images never leave your machine. Files are loaded into browser memory using FileReader and Canvas APIs. No data is sent over the network to any server.
             </p>
             <div class="privacy-metric">
               <span class="metric-label">NETWORK PAYLOAD DISPATCHED:</span>
@@ -296,7 +290,7 @@
             </div>
             <h3 class="privacy-statement-title">Storage behavior</h3>
             <p class="privacy-statement-body">
-              No local persistence or caching across sessions. There is no server database, no tracking cookies, and no image data written to IndexedDB or localStorage. All processed data in memory is purged immediately upon closing or refreshing the tab.
+              Nothing is stored across sessions. There is no database, no cookies, and no image data saved to disk. All data held in memory is cleared the moment you close or refresh the tab.
             </p>
             <div class="privacy-metric">
               <span class="metric-label">PERSISTENT RECORD RETENTION:</span>
@@ -312,7 +306,7 @@
             </div>
             <h3 class="privacy-statement-title">Tracking behavior</h3>
             <p class="privacy-statement-body">
-              No telemetry scripts, no third-party tracking pixels, and no fingerprinting libraries exist within the application. Outgoing network requests during image manipulation remain strictly zero.
+              No analytics scripts, no tracking pixels, and no device fingerprinting. Outgoing network requests during tool use remain strictly zero.
             </p>
             <div class="privacy-metric">
               <span class="metric-label">TELEMETRY BEACONS:</span>
@@ -333,22 +327,19 @@
             <span class="section-meta-label">TECHNICAL SPECIFICATION</span>
           </div>
           <h2 id="about-title" class="section-title">ENGINE ARCHITECTURE</h2>
-          <p class="section-subtitle">
-            Why client-side processing serves as the optimal operational model for image tooling.
-          </p>
         </div>
 
         <div class="about-grid">
           <div class="about-panel">
             <h3 class="about-panel-title">Hardware-accelerated browser execution</h3>
             <p class="about-panel-text">
-              Modern web standards support direct pixel manipulation in hardware-accelerated 2D contexts and WebGL shaders. Running operations locally removes round-trip network latency, eliminates arbitrary upload file-size caps, and bypasses queue bottlenecks common to cloud-rendered SaaS pipelines.
+              Modern browsers manipulate image pixels directly using local CPU and GPU acceleration. Processing on-device eliminates upload and download wait times, avoids file size limits, and removes server queue delays.
             </p>
           </div>
           <div class="about-panel">
             <h3 class="about-panel-title">Zero transit liability</h3>
             <p class="about-panel-text">
-              Traditional web tools require transferring complete image files to third-party infrastructure for processing. Lensque inverts this paradigm by executing algorithms locally inside the user's browser runtime. Because the files never traverse the network, interception or unauthorized persistence is mathematically precluded.
+              Most online image tools upload your files to remote servers to do the work. Lensque runs the manipulation code directly in your browser. Because files never leave your machine, there is nothing to intercept or store remotely.
             </p>
           </div>
         </div>
