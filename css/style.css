@@ -480,127 +480,122 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   08. Tools Grid & Tool Cards (Hard Offset Shadows)
+   08. Tools Section — Terminal Directory Table Layout
    -------------------------------------------------------------------------- */
 .tools-section {
   border-bottom: var(--border-width) solid var(--border-default);
   background-color: var(--bg-main);
 }
 
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.tool-card {
-  position: relative;
-  background-color: var(--bg-surface);
+.tools-directory-table {
   border: var(--border-width) solid var(--border-default);
-  /* The defining neo-brutalist signature: hard offset shadow in accent yellow */
-  box-shadow: var(--shadow-accent);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--bg-surface);
 }
 
-.tool-card:hover {
-  transform: translate(2px, 2px);
-  box-shadow: var(--shadow-accent-hover);
-  border-color: var(--accent-yellow);
-}
-
-.tool-card:focus-within {
-  border-color: var(--accent-yellow);
-}
-
-.tool-card-inner {
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.tool-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.directory-header-row {
+  display: grid;
+  grid-template-columns: 50px 220px 1fr 240px 140px;
+  gap: 20px;
+  padding: 12px 24px;
+  background-color: #070707;
   border-bottom: var(--border-hairline) solid var(--border-default);
-  padding-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  align-items: center;
 }
 
-.tool-index {
+.dir-col-spec {
+  text-align: right;
+}
+
+.dir-col-action {
+  text-align: right;
+}
+
+.tool-row {
+  display: grid;
+  grid-template-columns: 50px 220px 1fr 240px 140px;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 24px;
+  border-bottom: var(--border-hairline) solid var(--border-default);
+  border-left: 3px solid transparent;
+  background-color: transparent;
+  transition: background-color 0.15s ease, border-left-color 0.15s ease;
+}
+
+.tool-row:last-child {
+  border-bottom: none;
+}
+
+.tool-row:hover {
+  background-color: rgba(245, 217, 10, 0.035);
+  border-left-color: var(--accent-yellow);
+}
+
+.tool-row-idx {
   font-family: var(--font-mono);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--accent-yellow);
 }
 
-.tool-category {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-}
-
-.tool-name {
+.tool-row-name {
   font-family: var(--font-headline);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: 12px;
 }
 
-.tool-description {
+.tool-row-desc {
   font-family: var(--font-body);
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 24px;
-  flex: 1;
+  line-height: 1.5;
 }
 
-.tool-specs {
+.tool-row-meta {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 24px;
-  padding: 12px 14px;
-  background-color: var(--bg-main);
-  border: var(--border-hairline) solid var(--border-default);
+  gap: 4px;
+  align-items: flex-end;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--text-secondary);
-}
-
-.spec-item {
   letter-spacing: 0.06em;
 }
 
-.tool-footer {
-  margin-top: auto;
+.row-spec-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: var(--bg-main);
+  border: var(--border-hairline) solid var(--border-default);
 }
 
-.tool-action-btn {
-  display: flex;
+.tool-row-action {
+  text-align: right;
+}
+
+.tool-row-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--text-primary);
   background-color: var(--bg-main);
-  border: var(--border-width) solid var(--border-default);
-  padding: 12px 16px;
-  transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+  border: 1px solid var(--border-default);
+  padding: 8px 14px;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.tool-card:hover .tool-action-btn {
+.tool-row:hover .tool-row-link {
   background-color: var(--accent-yellow);
   color: var(--text-on-accent);
   border-color: var(--accent-yellow);
@@ -613,8 +608,8 @@ button {
   transition: transform 0.15s ease;
 }
 
-.tool-card:hover .action-icon,
-.tool-action-btn:hover .action-icon {
+.tool-row:hover .action-icon,
+.tool-row-link:hover .action-icon {
   transform: translateX(3px);
 }
 
@@ -839,8 +834,24 @@ button {
     gap: 40px;
   }
 
-  .tools-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .directory-header-row {
+    grid-template-columns: 45px 180px 1fr 130px;
+    gap: 16px;
+    padding: 12px 18px;
+  }
+
+  .dir-col-spec {
+    display: none;
+  }
+
+  .tool-row {
+    grid-template-columns: 45px 180px 1fr 130px;
+    gap: 16px;
+    padding: 18px 18px;
+  }
+
+  .tool-row-meta {
+    display: none;
   }
 
   .privacy-strip-grid {
@@ -883,26 +894,39 @@ button {
     padding: 48px 16px;
   }
 
-  .tools-grid {
+  .directory-header-row {
+    display: none;
+  }
+
+  .tool-row {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 10px;
+    padding: 18px 16px;
+  }
+
+  .tool-row-idx {
+    font-size: 0.95rem;
+  }
+
+  .tool-row-name {
+    font-size: 1.15rem;
+  }
+
+  .tool-row-meta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .tool-row-action {
+    text-align: left;
+    margin-top: 6px;
   }
 
   .about-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stat-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-cell {
-    border-right: none !important;
-    border-bottom: var(--border-hairline) solid var(--border-default);
-  }
-
-  .stat-cell:last-child {
-    border-bottom: none;
   }
 
   .footer-primary-row {

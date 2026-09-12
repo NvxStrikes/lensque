@@ -88,19 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // Tool cards: snappy staggered group (0.08s stagger)
-      const toolCards = document.querySelectorAll('.tool-card');
-      if (toolCards.length > 0) {
-        gsap.from(toolCards, {
+      // Tool directory rows: snappy staggered group (0.06s stagger)
+      const toolRows = document.querySelectorAll('.tool-row');
+      if (toolRows.length > 0) {
+        gsap.from(toolRows, {
           scrollTrigger: {
-            trigger: '.tools-grid',
+            trigger: '.tools-directory-table',
             start: 'top 80%',
             toggleActions: 'play none none none'
           },
           opacity: 0,
-          y: 24,
-          duration: 0.4,
-          stagger: 0.08,
+          y: 20,
+          duration: 0.35,
+          stagger: 0.06,
           ease: 'power2.out',
           clearProps: 'all'
         });
@@ -176,18 +176,15 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section) => sectionObserver.observe(section));
   }
 
-  // 4. Tool Card Action Feedback (CSS handles hover, this handles active click)
-  const toolButtons = document.querySelectorAll('.tool-action-btn');
+  // 4. Tool Row Action Feedback (CSS handles hover, this handles active click)
+  const toolButtons = document.querySelectorAll('.tool-action-btn, .tool-row-link');
   toolButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const card = btn.closest('.tool-card');
-      if (card) {
-        card.style.transform = 'translate(4px, 4px)';
-        card.style.boxShadow = '0px 0px 0px 0px var(--accent-yellow)';
-        
+      const row = btn.closest('.tool-row');
+      if (row) {
+        row.style.backgroundColor = 'rgba(245, 217, 10, 0.08)';
         setTimeout(() => {
-          card.style.transform = '';
-          card.style.boxShadow = '';
+          row.style.backgroundColor = '';
         }, 200);
       }
     });

@@ -121,149 +121,116 @@
           </p>
         </div>
 
-        <!-- 6 Tools Grid with Neo-Brutalist Hard Offset Shadows -->
-        <div class="tools-grid">
+        <!-- Terminal-Style Tools Directory Table -->
+        <div class="tools-directory-table" role="region" aria-label="Tool directory table">
+          <!-- Table Header -->
+          <div class="directory-header-row" aria-hidden="true">
+            <span class="dir-col-idx">ID</span>
+            <span class="dir-col-name">MODULE</span>
+            <span class="dir-col-desc">FUNCTION</span>
+            <span class="dir-col-spec">PIPELINE / SPEC</span>
+            <span class="dir-col-action">ACTION</span>
+          </div>
+
           <!-- Tool 01 -->
-          <article class="tool-card" id="tool-01">
-            <div class="tool-card-inner">
-              <div class="tool-card-top">
-                <span class="tool-index">01</span>
-                <span class="tool-category">SEGMENTATION</span>
-              </div>
-              <h3 class="tool-name">Background remover</h3>
-              <p class="tool-description">
-                Removes the background from an image, outputs transparent PNG.
-              </p>
-              <div class="tool-specs">
-                <span class="spec-item">OUTPUT: PNG</span>
-                <span class="spec-item">ALPHA CHANNEL: PRESERVED</span>
-              </div>
-              <div class="tool-footer">
-                <a href="#tool-01" class="tool-action-btn">
-                  <span>OPEN TOOL</span>
-                  <span class="action-icon" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+          <article class="tool-row" id="tool-01">
+            <span class="tool-row-idx">01</span>
+            <h3 class="tool-row-name">Background remover</h3>
+            <p class="tool-row-desc">Removes the background from an image, outputs transparent PNG.</p>
+            <div class="tool-row-meta">
+              <span class="row-spec-tag">OUTPUT: PNG</span>
+              <span class="row-spec-tag">ALPHA: PRESERVED</span>
+            </div>
+            <div class="tool-row-action">
+              <a href="#tool-01" class="tool-row-link">
+                <span>OPEN TOOL</span>
+                <span class="action-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
 
           <!-- Tool 02 -->
-          <article class="tool-card" id="tool-02">
-            <div class="tool-card-inner">
-              <div class="tool-card-top">
-                <span class="tool-index">02</span>
-                <span class="tool-category">OPTIMIZATION</span>
-              </div>
-              <h3 class="tool-name">Image compressor</h3>
-              <p class="tool-description">
-                Reduces file size with adjustable quality, shows before/after size.
-              </p>
-              <div class="tool-specs">
-                <span class="spec-item">TARGETS: JPG / WEBP / PNG</span>
-                <span class="spec-item">METRICS: REALTIME DELTA</span>
-              </div>
-              <div class="tool-footer">
-                <a href="#tool-02" class="tool-action-btn">
-                  <span>OPEN TOOL</span>
-                  <span class="action-icon" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+          <article class="tool-row" id="tool-02">
+            <span class="tool-row-idx">02</span>
+            <h3 class="tool-row-name">Image compressor</h3>
+            <p class="tool-row-desc">Reduces file size with adjustable quality, shows before/after size.</p>
+            <div class="tool-row-meta">
+              <span class="row-spec-tag">TARGETS: JPG / WEBP / PNG</span>
+              <span class="row-spec-tag">METRICS: REALTIME DELTA</span>
+            </div>
+            <div class="tool-row-action">
+              <a href="#tool-02" class="tool-row-link">
+                <span>OPEN TOOL</span>
+                <span class="action-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
 
           <!-- Tool 03 -->
-          <article class="tool-card" id="tool-03">
-            <div class="tool-card-inner">
-              <div class="tool-card-top">
-                <span class="tool-index">03</span>
-                <span class="tool-category">RESOLUTION</span>
-              </div>
-              <h3 class="tool-name">Upscaler</h3>
-              <p class="tool-description">
-                Increases image resolution by 2x or 4x, on-device.
-              </p>
-              <div class="tool-specs">
-                <span class="spec-item">SCALING FACTORS: 2X / 4X</span>
-                <span class="spec-item">INTERPOLATION: ON-DEVICE</span>
-              </div>
-              <div class="tool-footer">
-                <a href="#tool-03" class="tool-action-btn">
-                  <span>OPEN TOOL</span>
-                  <span class="action-icon" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+          <article class="tool-row" id="tool-03">
+            <span class="tool-row-idx">03</span>
+            <h3 class="tool-row-name">Upscaler</h3>
+            <p class="tool-row-desc">Increases image resolution by 2x or 4x, on-device.</p>
+            <div class="tool-row-meta">
+              <span class="row-spec-tag">SCALING: 2X / 4X</span>
+              <span class="row-spec-tag">INTERPOLATION: ON-DEVICE</span>
+            </div>
+            <div class="tool-row-action">
+              <a href="#tool-03" class="tool-row-link">
+                <span>OPEN TOOL</span>
+                <span class="action-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
 
           <!-- Tool 04 -->
-          <article class="tool-card" id="tool-04">
-            <div class="tool-card-inner">
-              <div class="tool-card-top">
-                <span class="tool-index">04</span>
-                <span class="tool-category">ENCODING</span>
-              </div>
-              <h3 class="tool-name">Format converter</h3>
-              <p class="tool-description">
-                Converts between JPG, PNG, WebP, and other common formats.
-              </p>
-              <div class="tool-specs">
-                <span class="spec-item">CODECS: WEBP / PNG / JPG</span>
-                <span class="spec-item">ENCODING: NATIVE CANVAS</span>
-              </div>
-              <div class="tool-footer">
-                <a href="#tool-04" class="tool-action-btn">
-                  <span>OPEN TOOL</span>
-                  <span class="action-icon" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+          <article class="tool-row" id="tool-04">
+            <span class="tool-row-idx">04</span>
+            <h3 class="tool-row-name">Format converter</h3>
+            <p class="tool-row-desc">Converts between JPG, PNG, WebP, and other common formats.</p>
+            <div class="tool-row-meta">
+              <span class="row-spec-tag">CODECS: WEBP / PNG / JPG</span>
+              <span class="row-spec-tag">ENCODING: NATIVE CANVAS</span>
+            </div>
+            <div class="tool-row-action">
+              <a href="#tool-04" class="tool-row-link">
+                <span>OPEN TOOL</span>
+                <span class="action-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
 
           <!-- Tool 05 -->
-          <article class="tool-card" id="tool-05">
-            <div class="tool-card-inner">
-              <div class="tool-card-top">
-                <span class="tool-index">05</span>
-                <span class="tool-category">COMPOSITION</span>
-              </div>
-              <h3 class="tool-name">Watermark adder</h3>
-              <p class="tool-description">
-                Adds a text or image watermark at a chosen position and opacity.
-              </p>
-              <div class="tool-specs">
-                <span class="spec-item">MODES: TEXT &amp; IMAGE OVERLAY</span>
-                <span class="spec-item">CONTROL: 9-POINT ANCHOR</span>
-              </div>
-              <div class="tool-footer">
-                <a href="#tool-05" class="tool-action-btn">
-                  <span>OPEN TOOL</span>
-                  <span class="action-icon" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+          <article class="tool-row" id="tool-05">
+            <span class="tool-row-idx">05</span>
+            <h3 class="tool-row-name">Watermark adder</h3>
+            <p class="tool-row-desc">Adds a text or image watermark at a chosen position and opacity.</p>
+            <div class="tool-row-meta">
+              <span class="row-spec-tag">MODES: TEXT &amp; IMAGE OVERLAY</span>
+              <span class="row-spec-tag">CONTROL: 9-POINT ANCHOR</span>
+            </div>
+            <div class="tool-row-action">
+              <a href="#tool-05" class="tool-row-link">
+                <span>OPEN TOOL</span>
+                <span class="action-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
 
           <!-- Tool 06 -->
-          <article class="tool-card" id="tool-06">
-            <div class="tool-card-inner">
-              <div class="tool-card-top">
-                <span class="tool-index">06</span>
-                <span class="tool-category">GENERATION</span>
-              </div>
-              <h3 class="tool-name">Favicon generator</h3>
-              <p class="tool-description">
-                Generates a full favicon set from a single image.
-              </p>
-              <div class="tool-specs">
-                <span class="spec-item">SIZES: 16 / 32 / 48 / 180 / 192</span>
-                <span class="spec-item">OUTPUT: ZIP ARCHIVE &amp; ICO</span>
-              </div>
-              <div class="tool-footer">
-                <a href="#tool-06" class="tool-action-btn">
-                  <span>OPEN TOOL</span>
-                  <span class="action-icon" aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+          <article class="tool-row" id="tool-06">
+            <span class="tool-row-idx">06</span>
+            <h3 class="tool-row-name">Favicon generator</h3>
+            <p class="tool-row-desc">Generates a full favicon set from a single image.</p>
+            <div class="tool-row-meta">
+              <span class="row-spec-tag">SIZES: 16 / 32 / 48 / 180 / 192</span>
+              <span class="row-spec-tag">OUTPUT: ZIP ARCHIVE &amp; ICO</span>
+            </div>
+            <div class="tool-row-action">
+              <a href="#tool-06" class="tool-row-link">
+                <span>OPEN TOOL</span>
+                <span class="action-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
         </div>
