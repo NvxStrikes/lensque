@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&amp;family=Space+Grotesk:wght@700&amp;display=swap');
+      .box { fill: #121212; stroke: #2A2A2A; stroke-width: 2; }
+      .box-active { fill: #181818; stroke: #F5D90A; stroke-width: 2; }
+      .accent { fill: #F5D90A; }
+      .white { fill: #EDEDED; }
+      .gray { fill: #9A9A9A; }
+      .mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 11px; letter-spacing: 1px; }
+      .header { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: -0.5px; }
+      .arrow { stroke: #F5D90A; stroke-width: 2; fill: none; }
+      .arrow-head { fill: #F5D90A; }
+    </style>
+  </defs>
+
+  <rect width="860" height="220" fill="#0B0B0B" stroke="#2A2A2A" stroke-width="2" />
+
+  <!-- Section Title -->
+  <text x="24" y="32" class="mono accent">ARCHITECTURE SPECIFICATION // ZERO-TRANSIT DATAFLOW</text>
+
+  <!-- Step 1: Input -->
+  <rect x="24" y="60" width="165" height="120" class="box" />
+  <rect x="24" y="60" width="165" height="4" fill="#EDEDED" />
+  <text x="36" y="86" class="mono gray">01 // INGESTION</text>
+  <text x="36" y="112" class="header white">Local File</text>
+  <text x="36" y="132" class="mono gray">User selects image</text>
+  <text x="36" y="152" class="mono accent">RAW BYTES</text>
+
+  <!-- Arrow 1 -->
+  <path d="M195 120 H235" class="arrow" />
+  <polygon points="235,116 243,120 235,124" class="arrow-head" />
+
+  <!-- Step 2: In-Browser Memory -->
+  <rect x="248" y="60" width="165" height="120" class="box-active" />
+  <rect x="248" y="60" width="165" height="4" fill="#F5D90A" />
+  <text x="260" y="86" class="mono accent">02 // ALLOCATION</text>
+  <text x="260" y="112" class="header white">Browser Memory</text>
+  <text x="260" y="132" class="mono gray">FileReader API</text>
+  <text x="260" y="152" class="mono accent">RAM VOLATILE</text>
+
+  <!-- Arrow 2 -->
+  <path d="M419 120 H459" class="arrow" />
+  <polygon points="459,116 467,120 459,124" class="arrow-head" />
+
+  <!-- Step 3: Hardware Pipeline -->
+  <rect x="472" y="60" width="165" height="120" class="box-active" />
+  <rect x="472" y="60" width="165" height="4" fill="#F5D90A" />
+  <text x="484" y="86" class="mono accent">03 // EXECUTION</text>
+  <text x="484" y="112" class="header white">Canvas &amp; WASM</text>
+  <text x="484" y="132" class="mono gray">GPU/CPU accelerated</text>
+  <text x="484" y="152" class="mono accent">ON-DEVICE</text>
+
+  <!-- Arrow 3 -->
+  <path d="M643 120 H683" class="arrow" />
+  <polygon points="683,116 691,120 683,124" class="arrow-head" />
+
+  <!-- Step 4: Export -->
+  <rect x="696" y="60" width="140" height="120" class="box" />
+  <rect x="696" y="60" width="140" height="4" fill="#EDEDED" />
+  <text x="708" y="86" class="mono gray">04 // DISK</text>
+  <text x="708" y="112" class="header white">Direct Save</text>
+  <text x="708" y="132" class="mono gray">Local file export</text>
+  <text x="708" y="152" class="mono accent">ZERO UPLOAD</text>
+
+  <!-- Footer Tagline inside SVG -->
+  <text x="24" y="202" class="mono gray">NETWORK BOUNDARY: <tspan class="accent">0 HTTP REQUESTS</tspan> | REMOTE SERVERS: <tspan class="accent">BYPASS ALL</tspan> | TELEMETRY: <tspan class="accent">NONE</tspan></text>
+</svg>

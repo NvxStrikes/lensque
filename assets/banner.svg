@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&amp;family=Space+Grotesk:wght@700&amp;display=swap');
+
+      .bg { fill: #0B0B0B; }
+      .border { stroke: #2A2A2A; stroke-width: 2; fill: none; }
+      .grid-line { stroke: #181818; stroke-width: 1; }
+      
+      .title-shadow {
+        font-family: 'Space Grotesk', -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 76px;
+        letter-spacing: -3px;
+        fill: #F5D90A;
+      }
+
+      .title {
+        font-family: 'Space Grotesk', -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 76px;
+        letter-spacing: -3px;
+        fill: #EDEDED;
+      }
+
+      .mono-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 2px;
+        fill: #9A9A9A;
+      }
+
+      .accent-text {
+        fill: #F5D90A;
+      }
+
+      .white-text {
+        fill: #EDEDED;
+      }
+
+      /* Animations */
+      @keyframes pulseDot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.3; transform: scale(0.8); }
+      }
+
+      @keyframes scanline {
+        0% { transform: translateY(0); opacity: 0.8; }
+        50% { opacity: 0.3; }
+        100% { transform: translateY(300px); opacity: 0.8; }
+      }
+
+      @keyframes blinkText {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      .pulse-indicator {
+        animation: pulseDot 1.8s infinite ease-in-out;
+        transform-origin: 52px 42px;
+      }
+
+      .blinker {
+        animation: blinkText 1s infinite steps(1);
+      }
+
+      .scanner-beam {
+        animation: scanline 4s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="900" height="300" class="bg" />
+
+  <!-- Technical Background Grid -->
+  <line x1="0" y1="60" x2="900" y2="60" class="grid-line" />
+  <line x1="0" y1="120" x2="900" y2="120" class="grid-line" />
+  <line x1="0" y1="180" x2="900" y2="180" class="grid-line" />
+  <line x1="0" y1="240" x2="900" y2="240" class="grid-line" />
+
+  <line x1="150" y1="0" x2="150" y2="300" class="grid-line" />
+  <line x1="300" y1="0" x2="300" y2="300" class="grid-line" />
+  <line x1="450" y1="0" x2="450" y2="300" class="grid-line" />
+  <line x1="600" y1="0" x2="600" y2="300" class="grid-line" />
+  <line x1="750" y1="0" x2="750" y2="300" class="grid-line" />
+
+  <!-- Outer Structural Border -->
+  <rect x="2" y="2" width="896" height="296" class="border" />
+
+  <!-- Corner Crosshairs -->
+  <path d="M12 24H24M18 18V30" stroke="#F5D90A" stroke-width="2" />
+  <path d="M876 24H888M882 18V30" stroke="#F5D90A" stroke-width="2" />
+  <path d="M12 276H24M18 270V282" stroke="#F5D90A" stroke-width="2" />
+  <path d="M876 276H888M882 270V282" stroke="#F5D90A" stroke-width="2" />
+
+  <!-- Scanning Line Beam -->
+  <line x1="2" y1="0" x2="898" y2="0" stroke="#F5D90A" stroke-width="1.5" stroke-opacity="0.4" class="scanner-beam" />
+
+  <!-- Telemetry Header Strip -->
+  <rect x="36" y="28" width="16" height="16" fill="#121212" stroke="#2A2A2A" stroke-width="1" />
+  <circle cx="44" cy="36" r="4" fill="#F5D90A" class="pulse-indicator" />
+  
+  <text x="64" y="40" class="mono-text">SYSTEM: <tspan class="accent-text">OPERATIONAL</tspan> // INGESTION: <tspan class="white-text">LOCAL_MEMORY</tspan> // UPLOADS: <tspan class="accent-text">0_BYTES</tspan></text>
+  
+  <rect x="740" y="26" width="124" height="24" fill="#181818" stroke="#2A2A2A" stroke-width="1" />
+  <text x="752" y="42" class="mono-text accent-text" font-size="11">REV: 2026.09</text>
+
+  <!-- Hard Offset Shadow and Title -->
+  <!-- Shadow Block -->
+  <text x="44" y="152" class="title-shadow">LENSQUE</text>
+  <!-- Foreground Title -->
+  <text x="40" y="148" class="title">LENSQUE</text>
+
+  <!-- Version Tag Badge -->
+  <rect x="445" y="94" width="110" height="26" fill="#F5D90A" />
+  <text x="455" y="112" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12" fill="#0B0B0B" letter-spacing="1">TOOLKIT_V1</text>
+
+  <!-- Subtitle / Positioning -->
+  <text x="42" y="196" class="mono-text white-text" font-size="15" letter-spacing="1">CLIENT-SIDE IMAGE TOOLKIT // 100% IN-BROWSER PROCESSING</text>
+  
+  <text x="42" y="222" class="mono-text" font-size="12" letter-spacing="0.5">Zero remote uploads. Zero tracking. Hardware-accelerated Canvas &amp; WASM execution.</text>
+
+  <!-- Live Terminal Telemetry readout -->
+  <rect x="42" y="248" width="816" height="32" fill="#121212" stroke="#2A2A2A" stroke-width="1" />
+  <rect x="42" y="248" width="4" height="32" fill="#F5D90A" />
+  <text x="56" y="269" class="mono-text accent-text" font-size="11">&gt; STATUS: STANDBY // BUFFER: 0KB // READY FOR INGESTION<tspan class="blinker" fill="#F5D90A"> _</tspan></text>
+</svg>
