@@ -575,6 +575,13 @@ button {
 .action-icon {
   font-family: var(--font-mono);
   font-size: 1rem;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.tool-card:hover .action-icon,
+.tool-action-btn:hover .action-icon {
+  transform: translateX(3px);
 }
 
 /* --------------------------------------------------------------------------
